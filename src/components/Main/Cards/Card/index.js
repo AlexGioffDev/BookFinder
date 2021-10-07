@@ -15,13 +15,13 @@ const CloseInfo = (event) => {
 export default function main(props) {
     return (
         <Card>
-            <img src={props.book.cover} alt="Book Cover" />
+            <img src={props.book.imageLinks.thumbnail} alt="Book Cover" />
             <button onClick={OpenInfo}>Info</button>
             <InfoContainer>
                 <button onClick={CloseInfo}>X</button>
-                <h1>Title: <span>{props.book.Title}</span></h1>
-                <h2>Author: <span>{props.book.Author}</span></h2>
-                <h3>Publisher: <span>{props.book.Publisher}</span></h3>
+                <h1>Title: <span>{props.book.title}</span></h1>
+                <h2>Author: <span>{props.book.authors[0]}</span></h2>
+                <h3>Publisher: <span>{props.book.publisher}</span></h3>
                 <a href="http://google.com" target="_blank" rel="noreferrer">More info</a>
             </InfoContainer>
         </Card>
