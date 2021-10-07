@@ -8,7 +8,7 @@ const InfoContainer = styled.div`
     border-radius: 14px;
     width: 100%;
     height: 0%;
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
     color: #fff;
     z-index: -100;
     font-size: 2rem;

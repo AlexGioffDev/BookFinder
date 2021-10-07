@@ -33,6 +33,10 @@ const Card = styled.div`
             outline: none;
         }
     }
+
+    @media only screen and (min-height: 800px) {
+        height: 50%;
+    }
     
 `
 

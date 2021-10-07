@@ -6,6 +6,22 @@ const Container = styled.div`
     overflow-x: hidden;
     overflow-y: auto;
     margin: 12px auto;
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+        height: 85%;
+        margin: 60px auto;
+        & > * {
+            flex-basis: 45%;
+        }
+    }
+
+    @media screen and (min-width: 1280px) {
+        & > * {
+            flex-basis: 30%;
+        }
+    }
 `
 
 export default Container
