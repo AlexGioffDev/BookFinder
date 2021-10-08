@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Header from './components/Header/index.js';
 import Main from './components/Main/index.js';
-
+import Book from './components/utility';
 
 
 function App() {
@@ -13,10 +13,17 @@ function App() {
       
       (async function() {
         try {
-          const response = await fetch(`https://books.googleapis.com/books/v1/volumes?q=harry%20potter&maxResults=40&orderBy=relevance&key=AIzaSyAB1Ml4WAKkJvG2Aku9IUHAofEZgxjFTm8`);
+          const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=harry+potter&orderBy=relevance&maxResults=40`)
           const json = await response.json();
-          const result = await json.items;
-          setBooks(result);
+          let result = await json.items;
+          result = result.filter(item => item.volumeInfo.imageLinks);
+          result = result.filter(item => item.volumeInfo.authors);
+          result = result.filter(item => item.volumeInfo.publisher);
+          const booksLoad = [];
+          result.forEach(book => {
+            booksLoad.push(new Book(book.id, book.volumeInfo))
+          })
+          setBooks(booksLoad);
         } catch (e) {
           console.error(e);
         }

@@ -3,13 +3,10 @@ import Card from './Card/index'
 
 
 
-export default function main(props) {
-    const firstMap = props.books.filter(book => book.volumeInfo.imageLinks);
-    const secondMap = firstMap.filter(book => book.volumeInfo.authors)
-    const thirdMap = secondMap.filter(book => book.volumeInfo.publisher);
+export default function Cards(props) {
     return (
         <Container>
-            {thirdMap.map(book => <Card book={book.volumeInfo} key={book.id} />)}
+            { props.books.map(book => <Card book={book.info} id={book.id} key={book.id} />) }
         </Container>
     )
 }
