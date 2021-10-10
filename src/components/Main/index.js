@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 
+import Loading from '../Loading/index';
 import Book from '../utility'
 import Container from './Container.js';
 import Input from './Input/index';
@@ -35,7 +36,7 @@ export default function Main(props) {
     return (
         <Container>
             <Input searchBook={searchBook}/>
-            {books.length <= 0 ? (<p>Loading...</p>) : (<Cards books={books} />) }
+            {books.length <= 0 ? (<Loading />) : (<Cards books={books} />) }
         </Container>
     )
 }
