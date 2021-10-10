@@ -5,9 +5,12 @@ const Container = styled.div`
     height: 3rem;
     display: flex;
     align-items: center;
-
    & > *{
        height: 100%;
+   }
+
+   @media only screen and (min-width: 1020px) {
+       justify-content: center;
    }
 `
 

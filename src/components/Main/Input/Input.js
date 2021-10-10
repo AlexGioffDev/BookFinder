@@ -14,6 +14,10 @@ const Input = styled.input`
     &:focus {
         outline: none;
     }
+
+    @media only screen and (min-width: 1020px) {
+        flex-basis: 55%;
+    }
 `;
 
 export default Input;

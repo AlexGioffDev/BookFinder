@@ -6,6 +6,10 @@ const Container = styled.div`
     margin: 2rem auto;
     height: 80vh;
     font-family: 'Lato', sans-serif;
+
+    @media only screen and (min-width: 1020px) {
+        width: 75vw;
+    }
 `
 
 export default Container
