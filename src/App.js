@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header/index.js';
 import Main from './components/Main/index.js';
 import Book from './components/utility';
-
+import Footer from './components/Footer/index';
 
 function App() {
 
@@ -34,6 +34,7 @@ function App() {
     <div className="App">
       <Header />
       <Main books={books} />
+      <Footer />
     </div>
   );
 }
